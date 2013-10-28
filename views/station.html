@@ -1,0 +1,30 @@
+<div>
+    <div class="page-header">
+        <h2>{{ 'Station de Sokorodji' }}
+            <small>
+                    <a href="/#/manager?stationId={{stationId}}">{{ 'Gérer vos gestionnaire' }}</a>
+                    <a href="/#/tank?stationId={{stationId}}">{{ 'Gérer vos cuves' }}</a>
+            </small>
+        </h2>
+    </div>
+</div>
+<div class="">
+    <div>
+        <ul class="tanks">
+
+            <div ng-repeat="tank in tanks">
+                <div class="bs-example">
+                    <div>{{tank.name|uppercase}}</div>
+                    <div class="progress">
+                        <div class="progress-bar {{tank.percent | progresscolor}}" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{tank.percent}}%">
+                            <span>{{tank.volume}}L soit {{tank.percent}}%</span>
+                        </div>
+                    </div>
+                </div>
+                <!--ul class="detail_action hide">
+                    <li><a href="#">Modifier le seuil</a> (Seuil d'alerte actuelle: <b>{{tank.threshold}} litres</b>)</li>
+                </ul-->
+            </div>
+        </ul>
+    </div>
+</div>

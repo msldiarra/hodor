@@ -1,0 +1,62 @@
+<div class="page-header">
+    <h2>{{ 'Ajouter un contact de gestionnaire' }}</h2>
+</div>
+<div ng-controller="ManagerCtrl">
+
+    <div>
+    <form class="form-inline" role="form">
+        <div class="form-group">
+            <label class="sr-only" for="first_name">{{ ' prénom' }}</label>
+            <input class="form-control" id="first_name" ng-model="first_name" type="text" name="first_name" autofocus="true" placeholder="{{ ' Prénom' }}">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="last_name">{{ ' Nom de famille' }}</label>
+            <input class="form-control" id="last_name" ng-model="last_name" type="text" name="last_name" placeholder="{{ ' Nom de famille' }}">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="email">{{ ' Adresse email' }}</label>
+            <input class="form-control" id="email" ng-model="email" type="text" name="email" placeholder="{{ ' Adresse email' }}">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="phone">{{ ' Numéro de téléphone' }}</label>
+            <input class="form-control" id="phone" ng-model="phone" type="text" name="phone" placeholder="{{ ' Numéro de téléphone' }}">
+        </div>
+        <button type="submit" ng-click="submit()" class="btn btn-primary">{{ 'Entrer (ou appuyer sur entrer)' }}</button>
+    </form>
+    </div>
+    <hr>
+    <div>
+        <!--table class="table table-striped">
+            <tr ng-repeat="manager in managers">
+                <td>{{manager.first_name}}</td>
+                <td>{{manager.last_name}}</td>
+                <td><a href="mailto:#">{{manager.email}}</a></td>
+                <td>{{manager.phone}}</td>
+                <td>
+                    <a href="" ng-click="remove(manager)">(supprimer)</a>
+                </td>
+            </tr>
+        </table-->
+        <div class="row" ng-repeat="manager in managers">
+            <div class="col-xs-6 col-sm-2">{{manager.first_name}}</div>
+            <div class="col-xs-6 col-sm-2">{{manager.last_name}}</div>
+            <div class="col-xs-6 col-sm-2"><a href="mailto:#">{{manager.email}}</a></div>
+            <div class="clearfix visible-xs"></div>
+            <div class="col-xs-6 col-sm-2">{{manager.phone}}</div>
+            <div class="col-xs-6 col-sm-2"><a href="" ng-click="remove(manager)" ng-animate="leave">(supprimer)</a></div>
+        </div>
+        <!--ul class="align">
+            <li ng-repeat="manager in managers">
+                <div class="view">
+                    <span>{{manager.first_name}}</span>
+                    <span>{{manager.last_name}}</span>
+                    <span><a href="mailto:#">{{manager.email}}</a></span>
+                    <span class="badge" >{{manager.phone}}</span>
+                    <span>
+                        <a href="" ng-click="remove(manager)">(supprimer)</a>
+                    </span>
+                </div>
+            </li>
+        </ul-->
+    </div>
+</div>
