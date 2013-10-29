@@ -4,20 +4,18 @@
 <div>
     <div>
         <div ng-repeat="tank in tanks">
-            <div>
+            <a class="black" href="/#/station?stationId={{tank.station_name}}">
                 <div>
-                    <h5>
-                        <a class="black" href="/#/station?stationId={{tank.station_name}}"><i class="fa fa-filter"></i>
-                        {{tank.station_name|uppercase}} {{tank.name}}
-                        </a>
-                    </h5>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar {{tank.percent | progresscolor}}" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{tank.percent}}%">
-                        <span>{{tank.percent}}%</span>
+                    <div>
+                        <h5><i class="fa fa-filter"></i> {{tank.station_name|uppercase}} {{tank.name}}</h5>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar {{tank.percent | progresscolor}}" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{tank.percent}}%">
+                            <span>{{tank.percent}}%</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>
